@@ -1,0 +1,22 @@
+﻿@model IEnumerable<YourProjectName.Models.Insuree>
+
+<h2>Admin Paneli – Tüm Teklifler</h2>
+
+<table class="table">
+    <tr>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Email</th>
+        <th>Teklif ($)</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.EmailAddress</td>
+            <td>@String.Format("{0:C}", item.Quote)</td>
+        </tr>
+    }
+</table>
